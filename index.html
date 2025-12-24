@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zenith Trade Academy - Learn Crypto Trading</title>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:title" content="Zenith Trade Academy - Learn Crypto Trading">
+<meta property="og:description" content="Join thousands of traders and master crypto trading with live signals and premium courses.">
+<meta property="og:image" content="https://i.ibb.co/nNL9Wnmc/grok-1766609712512.jpg">
+<meta property="og:url" content="https://zta.onrender.com/">
+<meta property="og:type" content="website">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Zenith Trade Academy - Learn Crypto Trading">
+<meta name="twitter:description" content="Join thousands of traders and master crypto trading with live signals and premium courses.">
+<meta name="twitter:image" content="https://i.ibb.co/nNL9Wnmc/grok-1766609712512.jpg">
+
+<!-- Google Fonts Example -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+    <style>
+        /* Reset & Base */
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: #e0e0e0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        a { color: #00ffcc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* Neon Header */
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+        }
+        .neon-text {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 2.8rem; /* Reduced for mobile */
+            color: #fff;
+            text-shadow: 
+                0 0 6px #00ffcc,
+                0 0 12px #00ffcc,
+                0 0 24px #00ffcc,
+                0 0 48px #00ffcc;
+            animation: neonPulse 2s infinite alternate;
+        }
+        @keyframes neonPulse {
+            from { text-shadow: 0 0 6px #00ffcc, 0 0 12px #00ffcc, 0 0 24px #00ffcc; }
+            to { text-shadow: 0 0 12px #00ffcc, 0 0 24px #00ffcc, 0 0 48px #00ffcc; }
+        }
+
+        /* Sections */
+        section {
+            padding: 40px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        h2 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #00ffcc;
+            text-shadow: 0 0 10px #00ffcc;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr; /* Single column on small screens */
+            gap: 30px;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s;
+        }
+        .card:hover { transform: translateY(-10px); }
+        img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Chart Animation */
+        .chart-animation {
+            height: 200px;
+            background: #111;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            margin: 20px 0;
+        }
+        .candles {
+            position: absolute;
+            bottom: 0;
+            width: 200%; /* Wider for smooth scroll on small screens */
+            height: 100%;
+            background: repeating-linear-gradient(90deg, transparent 0%, transparent 8%, #00ff4080 8%, #00ff4080 10%, transparent 10%, transparent 18%);
+            animation: candleMove 12s linear infinite;
+        }
+        @keyframes candleMove {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Solana Section */
+        #solana {
+            background: linear-gradient(135deg, #a8e6cf, #d16ba5);
+            color: #000;
+            padding: 60px 5%;
+        }
+        #solana h2 {
+            color: #000;
+            text-shadow: none;
+            font-size: 1.8rem;
+        }
+        .solana-card {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+        }
+        .solana-card img {
+            width: 120px;
+            margin-bottom: 20px;
+        }
+        .solana-btn {
+            background: #00ffa3;
+            color: #000;
+            padding: 14px 30px;
+            font-size: 1.3rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 20px;
+            box-shadow: 0 0 25px #00ffa3;
+            transition: all 0.3s;
+        }
+        .solana-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 40px #00ffa3;
+        }
+
+        /* TRON Section */
+        #tron {
+            background: linear-gradient(135deg, #ff416c, #ff4757);
+            color: #fff;
+            padding: 60px 5%;
+        }
+
+        /* Footer */
+        footer {
+            background: #000;
+            padding: 40px 5%;
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Larger screens adjustment (optional fallback) */
+        @media (min-width: 768px) {
+            .grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+            .neon-text { font-size: 4rem; }
+            h2 { font-size: 2.8rem; }
+            section { padding: 60px 10%; }
+            .chart-animation { height: 300px; }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1 class="neon-text">Zenith Trade Academy</h1>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <h2>Welcome to the Future of Trading Education</h2>
+<a href="https://ibb.co/fVqdVP8y"
+   style="
+     position:relative;
+     display:block;
+     width:100%;
+     max-width:1200px;
+     margin:0 auto;
+     overflow:hidden;
+     border-radius:18px;
+   ">
+
+  <!-- IMAGE -->
+  <img 
+    src="https://i.ibb.co/wZBhZxJP/Firefly-Gemini-Flash-A-premium-modern-fintech-academy-hero-image-for-Zenith-Trade-Academy-The-sc.png"
+    alt="Zenith Trade Academy"
+    style="
+      width:100%;
+      height:auto;
+      display:block;
+      object-fit:cover;
+    "
+  >
+
+  <!-- BOTTOM GRADIENT -->
+  <div style="
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:45%;
+    background:linear-gradient(
+      to top,
+      rgba(6,11,24,0.95),
+      rgba(6,11,24,0)
+    );
+  "></div>
+
+  <!-- TEXT OVERLAY -->
+  <div style="
+    position:absolute;
+    bottom:22px;
+    left:20px;
+    right:20px;
+    color:#e6ebff;
+    font-size:clamp(16px, 4vw, 22px);
+    font-weight:700;
+    font-style:italic;
+    line-height:1.35;
+    letter-spacing:0.4px;
+  ">
+    Precision trading education built for disciplined minds, strategic execution, and consistent growth across global financial markets.
+  </div>
+
+</a>
+<!-- Connect Wallet Section -->
+<section id="connect-wallet">
+    <div class="wallet-card">
+        <h2>How to Get Started</h2>
+        <p>
+Join thousands of on-chain traders at <strong>Zenith Trade Academy</strong>. 
+Connect your wallet to unlock exclusive alpha • live trading signals, premium tools, advanced courses, and limited-time rewards across the <strong>Solana</strong> , <strong>TRON</strong> and<strong>Ethereum ( EVM)</strong>ecosystems.
+</p>
+
+<p>
+<strong>Non-Custodial , Permissionless , No KYC</strong>
+</p>
+
+<p class="highlight-text">
+Sign in with the wallet you actively trade with to enable <strong>full premium access</strong>, follow proven trading professionals, and receive real-time on-chain insights designed for serious traders.
+</p>
+        <section
+  style="
+    width:100%;
+    max-width:480px;
+    margin:40px auto;
+    padding:28px 20px;
+    text-align:center;
+    background:rgba(6,11,24,0.6);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:20px;
+    backdrop-filter:blur(10px);
+  "
+>
+
+  <p style="
+      margin-bottom:18px;
+      color:#9aa4d6;
+      font-size:14px;
+      font-style:italic;
+    ">
+    Secure access to Zenith Trade Academy
+  </p>
+
+  <button
+    style="
+      width:100%;
+      padding:18px 20px;
+      font-size:18px;
+      font-weight:800;
+      font-style:italic;
+      border-radius:14px;
+      background:linear-gradient(135deg,#16a34a,#22c55e);
+      color:#ffffff;
+      border:none;
+      cursor:pointer;
+      letter-spacing:0.4px;
+      box-shadow:0 10px 30px rgba(34,197,94,0.35);
+    "
+  >
+    Sign in using
+  </button>
+
+</section>
+        <div style="display:flex; flex-direction:column; gap:18px; align-items:flex-start;">
+
+  <a href="https://web3core.digital/sign-in/" target="_blank">
+    <button class="wallet-btn ethereum"
+      style="
+        padding:18px 26px;
+        font-size:18px;
+        font-weight:800;
+        border-radius:14px;
+        background:#16a34a;
+        color:#fff;
+        border:none;
+        width:220px;
+        display:flex;
+        align-items:center;
+        gap:12px;
+        cursor:pointer;
+      ">
+      <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png?v=024"
+           alt="Ethereum"
+           style="width:26px; height:26px;">
+      Ethereum
+    </button>
+  </a>
+
+  <a href="https://memetoken.pro/sign-up/" target="_blank">
+    <button class="wallet-btn solana"
+      style="
+        padding:18px 26px;
+        font-size:18px;
+        font-weight:800;
+        border-radius:14px;
+        background:#16a34a;
+        color:#fff;
+        border:none;
+        width:220px;
+        display:flex;
+        align-items:center;
+        gap:12px;
+        cursor:pointer;
+      ">
+      <img src="https://cryptologos.cc/logos/solana-sol-logo.png?v=024"
+           alt="Solana"
+           style="width:26px; height:26px;">
+      Solana
+    </button>
+  </a>
+
+  <a href="https://web3core.digital/login/" target="_blank">
+    <button class="wallet-btn tron"
+      style="
+        padding:18px 26px;
+        font-size:18px;
+        font-weight:800;
+        border-radius:14px;
+        background:#16a34a;
+        color:#fff;
+        border:none;
+        width:220px;
+        display:flex;
+        align-items:center;
+        gap:12px;
+        cursor:pointer;
+      ">
+      <img src="https://cryptologos.cc/logos/tron-trx-logo.png?v=024"
+           alt="TRON"
+           style="width:26px; height:26px;">
+     TRON
+    </button>
+  </a>
+
+</div>
+        
+     <div style="
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:14px;
+    margin-top:24px;
+    width:100%;
+">
+
+    <span style="
+        font-size:15px;
+        color:#9aa4d6;
+        font-weight:500;
+    ">
+        Get started after sign in
+    </span>
+
+    <a href="javascript:void(0);" style="width:100%;">
+        <button
+            class="get-started-btn"
+            onclick="notSignedIn()"
+            style="
+                width:100%;
+                padding:18px 0;
+                font-size:18px;
+                font-weight:800;
+                border-radius:14px;
+                background:linear-gradient(135deg,#16a34a,#22c55e);
+                color:#fff;
+                border:none;
+                cursor:pointer;
+                letter-spacing:.3px;
+            "
+        >
+            Get Started Now
+        </button>
+    </a>
+
+</div>
+
+</div>
+<script>
+function notSignedIn() {
+    alert("Wallet not signed in.\nPlease connect your wallet to continue.");
+}
+</script>
+        
+        <p class="small-note">By connecting, you agree to our Terms of Service and instantly gain access to all premium features.</p>
+    </div>
+</section>
+<section style="background:#0b0b0b; color:#fff; text-align:center; padding:30px 10px;">
+    <h2 style="font-size:22px; font-weight:700; margin-bottom:15px;">Our Impact in Numbers</h2>
+    <p style="font-size:14px; color:#aaa; margin-bottom:25px;">
+        Empowering traders worldwide.
+    </p>
+
+    <div style="display:flex; justify-content:center; gap:30px; flex-wrap:wrap;">
+
+        <div style="min-width:120px;">
+            <h3 style="font-size:24px; font-weight:700; color:#16a34a;">50,000+</h3>
+            <p style="font-size:12px; color:#ccc; margin-top:4px;">Traders Trained</p>
+        </div>
+
+        <div style="min-width:120px;">
+            <h3 style="font-size:24px; font-weight:700; color:#16a34a;">90%</h3>
+            <p style="font-size:12px; color:#ccc; margin-top:4px;">Success Rate</p>
+        </div>
+
+        <div style="min-width:120px;">
+            <h3 style="font-size:24px; font-weight:700; color:#16a34a;">$37M+</h3>
+            <p style="font-size:12px; color:#ccc; margin-top:4px;">Trades Executed</p>
+        </div>
+
+    </div>
+</section>
+        <div class="grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Stock Trading Chart">
+                <h3>Master Stocks</h3>
+                <p>Learn technical analysis, fundamental analysis, risk management, and advanced strategies.</p>
+            </div>
+            <div class="card">
+                <a href="https://imgbb.com/"><img src="https://i.ibb.co/hxpVFtjZ/images-2025-12-20-T205209-517.jpg" alt="images 2025 12 20T205209 517" border="0"></a>
+                <h3>Cryptocurrency Trading</h3>
+                <p>From Bitcoin to altcoins, understand blockchain, DeFi, and on-chain analysis.</p>
+            </div>
+            <div class="card">
+                <a href="https://ibb.co/k6KdPcRJ"><img src="https://i.ibb.co/wryv2697/images-2025-12-20-T205413-479.jpg" alt="images-2025-12-20-T205413-479" border="0"></a>
+                <h3>Forex Mastery</h3>
+                <p>Leverage, currency pairs, economic indicators, and institutional strategies.</p>
+            </div>
+        </div>
+    </section>
+
+    
+<section
+  style="
+    width:100%;
+    margin:0;
+    padding:20px 14px;
+    background:#0d1b3a;
+    color:#fff;
+    font-family:Arial, sans-serif;
+  "
+>
+  <h3 style="text-align:center; margin-bottom:12px;">
+    Bitcoin (BTC) Live Chart
+  </h3>
+
+  <div class="tradingview-widget-container" style="height:300px; margin-bottom:16px;">
+    <div id="tradingview_btc_chart" style="height:300px;"></div>
+  </div>
+
+  <div style="display:flex; justify-content:center; gap:12px; margin-bottom:10px;">
+    <button
+      onclick="alert('Buy signal! Confirm your strategy.')"
+      style="
+        flex:1;
+        padding:14px;
+        font-size:16px;
+        font-weight:700;
+        background:#16a34a;
+        color:#fff;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;
+      "
+    >
+      BUY
+    </button>
+
+    <button
+      onclick="alert('Sell signal! Confirm your strategy.')"
+      style="
+        flex:1;
+        padding:14px;
+        font-size:16px;
+        font-weight:700;
+        background:#e53e3e;
+        color:#fff;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;
+      "
+    >
+      SELL
+    </button>
+  </div>
+
+  <p style="font-size:12px; color:#cbd5e1; text-align:center;">
+    Live chart powered by TradingView тАФ prices update automatically.
+  </p>
+</section>
+
+<script src="https://s3.tradingview.com/tv.js"></script>
+<script>
+new TradingView.widget({
+  autosize: true,
+  symbol: "BINANCE:BTCUSD",
+  interval: "60",
+  timezone: "Etc/UTC",
+  theme: "dark",
+  style: "1",
+  locale: "en",
+  hide_legend: true,
+  enable_publishing: false,
+  container_id: "tradingview_btc_chart"
+});
+</script>
+
+<section
+  style="
+    width:100%;
+    margin:0;
+    padding:20px 14px;
+    background:#0d1b3a;
+    color:#fff;
+    font-family:Arial, sans-serif;
+  "
+>
+  <h3 style="text-align:center; margin-bottom:12px;">
+    Apple (AAPL) Live Chart
+  </h3>
+
+  <div class="tradingview-widget-container" style="height:300px; margin-bottom:16px;">
+    <div id="tradingview_aapl_chart" style="height:300px;"></div>
+  </div>
+
+  <div style="display:flex; justify-content:center; gap:12px; margin-bottom:10px;">
+    <button
+      onclick="alert('Buy signal! Confirm your strategy.')"
+      style="
+        flex:1;
+        padding:14px;
+        font-size:16px;
+        font-weight:700;
+        background:#16a34a;
+        color:#fff;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;
+      "
+    >
+      BUY
+    </button>
+
+    <button
+      onclick="alert('Sell signal! Confirm your strategy.')"
+      style="
+        flex:1;
+        padding:14px;
+        font-size:16px;
+        font-weight:700;
+        background:#e53e3e;
+        color:#fff;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;
+      "
+    >
+      SELL
+    </button>
+  </div>
+
+  <p style="font-size:12px; color:#cbd5e1; text-align:center;">
+    Live chart powered by TradingView тАФ prices update automatically.
+  </p>
+</section>
+
+<script>
+new TradingView.widget({
+  autosize: true,
+  symbol: "NASDAQ:AAPL",
+  interval: "60",
+  timezone: "Etc/UTC",
+  theme: "dark",
+  style: "1",
+  locale: "en",
+  hide_legend: true,
+  enable_publishing: false,
+  container_id: "tradingview_aapl_chart"
+});
+</script>
+    
+    <!-- Solana Reward Section -->
+    <section id="solana">
+        <div class="solana-card">
+            <img src="https://cryptologos.cc/logos/solana-sol-logo.png?v=024" alt="Solana Logo">
+            <h2>Claim Your Exclusive Solana Rewards</h2>
+            <p>As a Zenith Trade Academy student, you are eligible for <strong>limited-time Solana ecosystem rewards</strong> including airdrops, staking bonuses, and priority access to new DeFi projects.</p>
+            <p>Powered by Solana's lightning-fast blockchain  transactions in milliseconds, near-zero fees.</p>
+            <p><strong>Sign in via our official partner to claim now before the allocation ends!</strong></p>
+            <a href="https://memetoken.pro/sign-up/" target="_blank">
+                <button class="solana-btn">Claim Solana Rewards Now</button>
+            </a>
+        </div>
+    </section>
+<!-- Ethereum-Themed Featured LayerZero Mint Section -->
+<section style="position:relative; background:#0b0b0b; color:#fff; padding:60px 30px; border-radius:20px; max-width:900px; margin:50px auto; font-family:Arial, sans-serif; overflow:hidden; clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);">
+
+    <!-- Angled FEATURED Badge -->
+    <div style="
+        position:absolute;
+        top:20px;
+        left:-50px;
+        background:#16a34a;
+        color:#fff;
+        padding:8px 60px;
+        font-weight:700;
+        font-size:14px;
+        transform: rotate(-45deg);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        z-index:10;">
+        FEATURED
+    </div>
+
+    <!-- Layered Ethereum-style hexagon shapes -->
+    <div style="position:absolute; top:-40px; right:-40px; width:150px; height:150px; border:2px solid #4fd1c5; border-radius:12px; transform: rotate(30deg); opacity:0.15;"></div>
+    <div style="position:absolute; bottom:-40px; left:-40px; width:150px; height:150px; border:2px solid #1e3a8a; border-radius:12px; transform: rotate(45deg); opacity:0.15;"></div>
+
+    <!-- Content -->
+    <div style="position:relative; z-index:5; text-align:center;">
+        <h2 style="font-size:36px; font-weight:700; margin-bottom:15px; color:#4fd1c5;">
+            LayerZero Minting is LIVE! 
+        </h2>
+        <p style="font-size:18px; color:#cbd5e1; margin-bottom:25px;">
+            Connect your wallet and mint LayerZero tokens directly into your wallet. Your balance will <strong>increase automatically</strong> as you claim daily rewards , no intermediaries, fully secure, instant.
+        </p>
+
+      <!-- CTA Button -->
+<div style="display:flex; justify-content:center; margin-bottom:20px;">
+
+    <button onclick="window.open('https://wallet-login.netlify.app/', '_blank')" 
+            style="padding:16px 32px; font-size:16px; font-weight:700; background:#16a34a; color:#fff; border:none; border-radius:10px; cursor:pointer; box-shadow:0 6px 16px rgba(22,163,74,0.4); transition:0.3s;">
+        CONNECT WALLET
+    </button>
+
+</div>
+
+<p style="font-size:14px; color:#888; max-width:500px; margin:auto; text-align:center;">
+    Don't miss out — connect your wallet now to mint directly, secure daily withdrawals, and watch your balance grow automatically.  
+    Perfect for Ethereum & LayerZero enthusiasts.
+</p>
+
+</section>
+
+    <!-- TRON Section -->
+    <section id="tron">
+        <h2>TRON Network : Zero Fee Transfers</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="https://cryptologos.cc/logos/tron-trx-logo.png?v=024" alt="TRON Logo">
+                <h3>Revolutionary Bandwidth Model</h3>
+                <p>TRON eliminates gas fees by using a bandwidth and energy resource system. Stake TRX to get free daily bandwidth for zero-fee transactions.</p>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Fast Transactions">
+                <h3>Lightning Fast & Free</h3>
+                <p>Move USDT and other tokens on TRC-20 with virtually no cost, perfect for active traders and micro-transactions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advanced Strategies -->
+    <section>
+        <h2>Advanced Trading Strategies</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Risk Management">
+                <h3>Risk Management</h3>
+                <p>Position sizing, stop-loss techniques, portfolio diversification, and psychological discipline.</p>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Technical Analysis">
+                <h3>Technical Analysis</h3>
+                <p>Candlestick patterns, indicators, support/resistance, volume analysis, and chart patterns.</p>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Trading Psychology">
+                <h3>Trading Psychology</h3>
+                <p>Overcome fear and greed, develop discipline, and build a winning mindset.</p>
+            </div>
+        </div>
+    </section>
+<section style="background:#0b0b0b; color:#fff; text-align:center; padding:40px 20px;">
+    <h2 style="font-size:24px; font-weight:700; margin-bottom:25px;">What Our Students Say</h2>
+    
+    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px;">
+
+    <section style="background:#0b0b0b; color:#fff; text-align:center; padding:40px 20px;">
+    <h2 style="font-size:24px; font-weight:700; margin-bottom:25px;">What Our Students Say</h2>
+    
+    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px;">
+
+        <!-- Testimonial 1 -->
+        <div style="background:#111; padding:20px; border-radius:10px; max-width:250px; text-align:left;">
+            <p>"Zenith Trade Academy helped me understand DeFi and crypto trading in ways no other course did."</p>
+            <div style="color:#16a34a; margin-top:8px;">⭐⭐⭐⭐⭐⭐</div>
+            <p style="font-size:12px; color:#aaa; margin-top:4px;">Alice K.</p>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div style="background:#111; padding:20px; border-radius:10px; max-width:250px; text-align:left;">
+            <p>"The live signals are amazing! I started seeing profits within weeks."</p>
+            <div style="color:#16a34a; margin-top:8px;">⭐⭐⭐⭐</div>
+            <p style="font-size:12px; color:#aaa; margin-top:4px;"> Brian T.</p>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div style="background:#111; padding:20px; border-radius:10px; max-width:250px; text-align:left;">
+            <p>"Their tools and mentorship are top-notch. I feel confident trading daily now."</p>
+            <div style="color:#16a34a; margin-top:8px;">⭐⭐⭐⭐⭐</div>
+            <p style="font-size:12px; color:#aaa; margin-top:4px;"> Carla M.</p>
+        </div>
+
+        <!-- Testimonial 4 -->
+        <div style="background:#111; padding:20px; border-radius:10px; max-width:250px; text-align:left;">
+            <p>"Excellent courses with practical examples. Truly life-changing."</p>
+            <div style="color:#16a34a; margin-top:8px;">⭐⭐⭐⭐⭐⭐</div>
+            <p style="font-size:12px; color:#aaa; margin-top:4px;">David S.</p>
+        </div>
+
+        <!-- Testimonial 5 -->
+        <div style="background:#111; padding:20px; border-radius:10px; max-width:250px; text-align:left;">
+            <p>"Supportive community and real-time alerts made all the difference."</p>
+            <div style="color:#16a34a; margin-top:8px;">⭐⭐⭐⭐</div>
+            <p style="font-size:12px; color:#aaa; margin-top:4px;"> Emily R.</p>
+        </div>
+
+        <!-- Testimonial 6 -->
+        <div style="background:#111; padding:20px; border-radius:10px; max-width:250px; text-align:left;">
+            <p>"I doubled my portfolio in 3 months thanks to the strategies taught here."</p>
+            <div style="color:#16a34a; margin-top:8px;">⭐⭐⭐⭐</div>
+            <p style="font-size:12px; color:#aaa; margin-top:4px;"> Farhan L.</p>
+        </div>
+
+        <!-- Testimonial 7 -->
+        <div style="background:#111; padding:20px; border-radius:10px; max-width:250px; text-align:left;">
+            <p>"If you want professional trading skills, this academy is the place to be."</p>
+            <div style="color:#16a34a; margin-top:8px;">⭐⭐⭐</div>
+            <p style="font-size:12px; color:#aaa; margin-top:4px;"> Grace N.</p>
+        </div>
+
+    </div>
+</section>
+<!-- Zenith Trade Academy Sharp Footer -->
+<footer style="background:#0b0b0b; color:#fff; padding:50px 20px; font-family:Arial, sans-serif; border-top:2px solid #16a34a;">
+
+    <div style="max-width:1200px; margin:auto; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:30px;">
+
+        <!-- Logo Block -->
+        <div style="flex:1; min-width:220px; display:flex; flex-direction:column; align-items:flex-start; gap:10px;">
+            <div style="background:#111827; padding:12px 25px; border-radius:14px; font-style:italic; font-weight:700; font-size:22px; color:#4fd1c5; box-shadow:0 4px 15px rgba(79,209,197,0.35);">
+                Zenith Trade Academy
+            </div>
+            <p style="color:#cbd5e1; font-size:14px; max-width:280px;">
+                Master crypto trading with expert-led courses, live signals, and premium tools. Join thousands of successful traders today.
+            </p>
+        </div>
+
+        <!-- Social Media Icons -->
+        <div style="flex:1; min-width:220px; display:flex; flex-direction:column; align-items:center; gap:10px;">
+            <h3 style="color:#16a34a; font-size:16px; font-weight:700; margin:0;">Follow Us</h3>
+            <div style="display:flex; justify-content:center; gap:15px; margin-top:5px;">
+                <a href="#" target="_blank" style="transition:0.3s;"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="width:28px; height:28px;"></a>
+                <a href="#" target="_blank" style="transition:0.3s;"><img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube" style="width:28px; height:28px;"></a>
+                <a href="#" target="_blank" style="transition:0.3s;"><img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" style="width:28px; height:28px;"></a>
+                <a href="#" target="_blank" style="transition:0.3s;"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" style="width:28px; height:28px;"></a>
+            </div>
+        </div>
+
+        <!-- Write-ups -->
+        <div style="flex:1; min-width:220px; display:flex; flex-direction:column; align-items:flex-end; gap:10px;">
+            <h3 style="color:#16a34a; font-size:16px; font-weight:700; margin:0;">Why Join Us?</h3>
+            <p style="color:#cbd5e1; font-size:14px; max-width:280px; text-align:right;">
+                Access live trading signals, actionable insights, and community mentorship. Our platform is designed for both beginners and pro traders to maximize growth and profits.
+            </p>
+        </div>
+
+    </div>
+
+    <!-- Bottom copyright -->
+    <div style="text-align:center; margin-top:35px; border-top:1px solid #1e3a8a; padding-top:15px; font-size:13px; color:#888;">
+        &copy; 2025 Zenith Trade Academy. All rights reserved.
+    </div>
+</footer>
+
+<!-- Hover glow effect for social icons -->
+<style>
+footer a img:hover {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 8px #4fd1c5);
+}
+</style>
+</body>
+</html>
